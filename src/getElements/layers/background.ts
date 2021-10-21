@@ -58,14 +58,5 @@ export function background(
     position += clip.duration;
   }
 
-  elements.push({
-    type: "frame",
-    name: "endingFrame",
-    // Starts .5 seconds early to account for possible "dark frames" at the end of the last clip
-    startAt: meta.titleDuration + durationOfAllClips - 0.5,
-    endAt: meta.titleDuration + durationOfAllClips + meta.endingDuration,
-    props: { videoKey: endingClip.id, position: "last", ...cover },
-  });
-
   return elements;
 }
